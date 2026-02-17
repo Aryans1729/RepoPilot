@@ -4,6 +4,11 @@ RepoPilot is a full-stack app that ingests a GitHub repository (URL or ZIP), sca
 
 This project is being built in **phases** (MVP-first). Phases 1–5 are wired: **ingest → index (chunks+embeddings) → retrieval → explain/chat/readme/suggestions**.
 
+## Live deployment
+
+- **Frontend (Vercel)**: `https://repo-pilot-t8h3.vercel.app/`
+- **Backend (Render)**: `https://repopilot-lkjq.onrender.com`
+
 ## Monorepo structure
 
 ```
