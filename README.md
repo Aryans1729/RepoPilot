@@ -34,6 +34,8 @@ Frontend:
 cp frontend/.env.example frontend/.env
 ```
 
+If your backend is deployed, set `VITE_API_BASE_URL` in `frontend/.env` to your backend URL (example: `https://repopilot-lkjq.onrender.com`).
+
 ## Install & run (development)
 
 In one terminal:
@@ -148,6 +150,8 @@ curl -X POST http://localhost:5050/api/agent/REPO_ID/chat \
   -H "Content-Type: application/json" \
   -d '{"message":"What are the main modules?", "history":[]}'
 ```
+
+To test against a deployed backend, replace `http://localhost:5050` with your backend URL (example: `https://repopilot-lkjq.onrender.com`).
 
 ## Tool functions (agent utilities)
 
