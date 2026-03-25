@@ -57,7 +57,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
       <div className="grid">
         <div className="panel">
           <h2>Folder Structure</h2>
-          <div className="row" style={{ marginBottom: 10 }}>
+          <div className="row mb10">
             <span className="pill">
               Index: {indexStatus?.status || "…"}
               {indexStatus?.totalChunks ? ` • ${indexStatus.totalChunks} chunks` : ""}
@@ -86,9 +86,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
             </button>
           </div>
           {error ? (
-            <div style={{ marginBottom: 10, color: "rgba(239,68,68,0.95)" }}>
-              {error}
-            </div>
+            <div className="errorText mb10">{error}</div>
           ) : null}
           {structure ? (
             <TreeView structure={structure} />
@@ -100,7 +98,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div className="panel">
             <h2>Architecture Summary</h2>
-            <div className="row" style={{ marginBottom: 10 }}>
+            <div className="row mb10">
               <button
                 className="btn primary"
                 disabled={archBusy || indexStatus?.status !== "indexed"}
@@ -124,9 +122,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
               </span>
             </div>
             {arch ? (
-              <div style={{ whiteSpace: "pre-wrap", fontSize: 13, color: "rgba(234,240,255,0.92)" }}>
-                {arch}
-              </div>
+              <div className="answerBlock">{arch}</div>
             ) : (
               <div className="muted">
                 Build the index, then generate an architecture explanation.
@@ -136,7 +132,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
 
           <div className="panel">
             <h2>Generated README</h2>
-            <div className="row" style={{ marginBottom: 10 }}>
+            <div className="row mb10">
               <button
                 className="btn primary"
                 disabled={readmeBusy || indexStatus?.status !== "indexed"}
@@ -158,9 +154,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
               <span className="pill">Requires index</span>
             </div>
             {readme ? (
-              <div style={{ whiteSpace: "pre-wrap", fontSize: 13, color: "rgba(234,240,255,0.92)" }}>
-                {readme}
-              </div>
+              <div className="answerBlock">{readme}</div>
             ) : (
               <div className="muted">Generate a README.md based on the repo context.</div>
             )}
@@ -168,7 +162,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
 
           <div className="panel">
             <h2>Suggestions & Code Smells</h2>
-            <div className="row" style={{ marginBottom: 10 }}>
+            <div className="row mb10">
               <button
                 className="btn primary"
                 disabled={suggestBusy || indexStatus?.status !== "indexed"}
@@ -190,9 +184,7 @@ export default function DashboardPage({ repoId, structure, onReset }) {
               <span className="pill">Requires index</span>
             </div>
             {suggestions ? (
-              <div style={{ whiteSpace: "pre-wrap", fontSize: 13, color: "rgba(234,240,255,0.92)" }}>
-                {suggestions}
-              </div>
+              <div className="answerBlock">{suggestions}</div>
             ) : (
               <div className="muted">Get improvement suggestions and potential code smells.</div>
             )}
