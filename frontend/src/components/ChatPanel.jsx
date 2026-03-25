@@ -62,10 +62,10 @@ export default function ChatPanel({ repoId, disabled }) {
       </div>
 
       {error ? (
-        <div style={{ marginTop: 10, color: "rgba(239,68,68,0.95)" }}>{error}</div>
+        <div className="errorText mt10">{error}</div>
       ) : null}
 
-      <div className="row" style={{ marginTop: 10 }}>
+      <div className="row mt10">
         <input
           type="text"
           value={input}

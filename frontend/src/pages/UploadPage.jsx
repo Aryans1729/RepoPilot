@@ -80,9 +80,7 @@ export default function UploadPage({ onAnalyzed }) {
           </div>
 
           {error ? (
-            <div style={{ marginTop: 12, color: "rgba(239,68,68,0.95)" }}>
-              {error}
-            </div>
+            <div className="errorText mt12">{error}</div>
           ) : null}
         </form>
       </div>
